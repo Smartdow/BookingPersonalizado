@@ -10,7 +10,7 @@ public class MapsActivity extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-       // Realm.init(this);
+        Realm.init(this);
         RealmConfiguration config = new RealmConfiguration.Builder().build();
         Realm.setDefaultConfiguration(config);
     }

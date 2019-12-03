@@ -46,7 +46,6 @@ public class GoogleMaps extends FragmentActivity implements
     private String accionUsuario, lat, lng, nombreLugar, tipoLugar;
 
     //Variables para la gestion del mapa y marker
-
     private GoogleMap mMap;
     private Marker miMarker, ubicacionMarker;
     private static final int LOCATION_REQUEST_CODE = 1;

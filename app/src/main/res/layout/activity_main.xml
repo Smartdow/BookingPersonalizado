@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:theme="@style/AppBooking"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -11,33 +12,42 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center"
+        android:background="@drawable/gradiente"
         android:padding="10dp">
+
         <ImageView
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+
         <EditText
             android:id="@+id/loginCorreo"
             android:hint="Correo"
+            android:textColorHint="@color/colorLight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <EditText
             android:id="@+id/loginContraseña"
             android:hint="Contraseña"
+            android:textColorHint="@color/colorLight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="25dp"/>
         <Button
             android:id="@+id/loginBtnLogin"
             android:text="Login"
+            android:background="@color/colorLight"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="onLogin"/>
+            android:layout_height="wrap_content"/>
+
         <Button
             android:id="@+id/loginBtnRegistrar"
-            android:text="Registrar"
             android:layout_width="match_parent"
+            android:layout_marginTop="12dp"
             android:layout_height="wrap_content"
-            android:onClick="onRegister"/>
+            android:background="@color/colorLight"
+            android:onClick="onRegister"
+            android:text="Registrar" />
 
         <com.google.android.gms.common.SignInButton
             android:id="@+id/sign_in_button"

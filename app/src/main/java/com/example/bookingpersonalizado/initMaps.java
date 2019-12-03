@@ -1,5 +1,6 @@
 package com.example.bookingpersonalizado;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,12 +12,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+
+
 import java.util.ArrayList;
 
 import io.realm.Realm;
 import io.realm.RealmResults;
 
 public class initMaps extends AppCompatActivity {
+
     //Hacemos referencia a los componentes graficos del layout activity_main.xml
     EditText etLatitudDes, etLongitudDes;
     Button btnOtenerCoordenadas;
@@ -189,5 +193,7 @@ public class initMaps extends AppCompatActivity {
         }
 
     }
+
+
 
 }
