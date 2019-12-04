@@ -1,51 +1,51 @@
 package com.example.bookingpersonalizado;
 
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
-
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.auth.api.signin.GoogleSignInApi;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.firebase.auth.FirebaseAuth;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Locale;
 
 public class Menu extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
 
-    Button SignOutButton;
+    ImageView img;
     private FirebaseAuth myAuth;
+    GoogleApiClient googleApiClient;
 
+    GoogleSignInApi googleSignInApi;
+
+    int RC_SIGN_IN = 9001;
+
+    //SignInButton signInButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.item_hotel);
+        setContentView(R.layout.activity_menu);
 
-
+        img = findViewById(R.id.menuImg);
         myAuth = FirebaseAuth.getInstance();
-        SignOutButton = findViewById(R.id.signOutButton);
 
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-mm-yyyy", Locale.getDefault());
-        Date date = new Date();
-        String fecha = dateFormat.format(date);
-        Toast.makeText(this, ""+ date, Toast.LENGTH_SHORT).show();
+        String fechaS = "1565586000000"; // Agosto 12 2019
+        long f = Long.parseLong(fechaS);
+        Date mDate = new Date(f);
+        Toast.makeText(this, ""+mDate, Toast.LENGTH_SHORT).show();
 
-        SignOutButton.setOnClickListener(new View.OnClickListener() {
+        img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 myAuth.signOut();
-                Intent i = new Intent(Menu.this,MainActivity.class);
+                Intent i = new Intent(Menu.this,login.class);
                 startActivity(i);
                 Toast.makeText(Menu.this, "Sesion Finalizada", Toast.LENGTH_SHORT).show();
                 finish();
@@ -53,34 +53,23 @@ public class Menu extends AppCompatActivity implements GoogleApiClient.OnConnect
         });
 
 
-
+        //mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
     }
 
-    public boolean onCreateOptionsMenu(Menu menu){
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu1, (android.view.Menu) menu);
-        return true;
+
+    public void onAcercaDe(View view){
+        Intent i = new Intent(this,AcercaDe.class);
+        startActivity(i);
     }
 
-    public boolean onOptionsItemSelected(MenuItem item){
-        switch (item.getItemId()){
-            case R.id.reserva:
-                return true;
-            case R.id.ayuda:
-                return true;
-            case R.id.signOutButton:
-                return true;
-                default:
-        }
-        return super.onOptionsItemSelected(item);
+    public void onReservas(View v){
+        Intent i = new Intent(this,ContainerActivity.class);
+        startActivity(i);
     }
-
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
     }
-
-
-
 }
+

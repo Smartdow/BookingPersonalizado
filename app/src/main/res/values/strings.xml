@@ -8,4 +8,9 @@
     <string name="longitud">Longitud</string>
     <string name="obtener">Obtener</string>
     <string name="ubicacion">Tu ubicacion</string>
+
+    <string name="action_settings">configuracion</string>
+    <string name="action_add">Añadir</string>
+    <string name="action_favorite">Marcar Favorito</string>
+    <string name="action_search">Buscar</string>
 </resources>

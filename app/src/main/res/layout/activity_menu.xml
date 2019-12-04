@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.ActionMenuView
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,6 +12,7 @@
         android:orientation="vertical">
         <ImageView
             android:id="@+id/menuImg"
+            android:src="@drawable/logo"
             android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
@@ -27,18 +28,18 @@
                 android:id="@+id/menuBtnReservas"
                 android:text="Reservas"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:theme="@style/BtnBooking"
+                android:onClick="onReservas"/>
             <Button
                 android:id="@+id/menuBtnAcerca"
+                android:onClick="onAcercaDe"
                 android:text="Acerca de"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-            <Button
-                android:id="@+id/signOutButton"
-                android:text="Cerrar sesion"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:theme="@style/BtnBooking"/>
 
         </LinearLayout>
     </LinearLayout>
-</androidx.appcompat.widget.ActionMenuView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
